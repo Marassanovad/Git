@@ -58,7 +58,7 @@ SELECT gender FROM (
        SELECT gender, COUNT((SELECT COUNT(*) FROM likes WHERE likes.user_id = profiles.user_id)) as likes_count FROM profiles
        WHERE gender = 'f'
        GROUP BY gender 
-) AS 
+) AS A
 GROUP BY gender 
 ORDER BY MAX(likes_count) DESC 
 LIMIT 1;
